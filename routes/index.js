@@ -1,8 +1,7 @@
 var express = require('express'),
     router = express.Router(),
-    ArticleProvider = require('../db/articleprovider-memory').ArticleProvider;
-
-var articleProvider = new ArticleProvider();
+    ArticleProvider = require('../db/articleprovider-mongodb').ArticleProvider,
+    articleProvider = new ArticleProvider('myblog', 'ds049288.mongolab.com', '49288');
 
 /* GET home page. */
 router.get('/', function(req, res) {
