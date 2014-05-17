@@ -71,3 +71,4 @@ ArticleProvider.prototype.save = function(articles, callback) {
 };
 
 module.exports.ArticleProvider = ArticleProvider;
+module.exports.mongolabArticlePorvider = new ArticleProvider('myblog', 'ds049288.mongolab.com', '49288');
