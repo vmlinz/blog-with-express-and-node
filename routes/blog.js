@@ -19,4 +19,25 @@ router.post('/new', function(req, res) {
 	});
 });
 
+router.post('/addComment', function(req, res) {
+    articleProvider.addCommentToArticle(req.param('_id'), {
+        person: req.param('person'),
+        comment: req.param('comment'),
+        created_at: new Date()
+       } , function( error, docs) {
+           res.redirect('/blog/' + req.param('_id'))
+       });
+});
+
+router.get('/:id', function(req, res) {
+	console.log(req.params.id);
+    articleProvider.findById(req.params.id, function(error, article) {
+    	console.log(error);
+        res.render('blog_show.jade', {
+            title: article.title,
+            article: article
+        });
+    });
+});
+
 module.exports = router;

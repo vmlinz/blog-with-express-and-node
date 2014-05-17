@@ -28,9 +28,9 @@ ArticleProvider.prototype.findAll = function(callback) {
 		if( error ) callback(error);
 		else {
 			article_collection.find().toArray(function(error, results) {
-				if( error ) callback(error)
-					else callback(null, results)
-				});
+				if( error ) callback(error);
+				else callback(null, results)
+			});
 		}
 	});
 };
@@ -71,4 +71,4 @@ ArticleProvider.prototype.save = function(articles, callback) {
 };
 
 module.exports.ArticleProvider = ArticleProvider;
-module.exports.mongolabArticlePorvider = new ArticleProvider('myblog', 'ds049288.mongolab.com', '49288');
+module.exports.mongolabArticleProvider = new ArticleProvider('myblog', 'ds049288.mongolab.com', '49288');
