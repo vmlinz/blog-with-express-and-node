@@ -1,3 +1,5 @@
+var ObjectID = require('mongodb').ObjectID;
+
 var articleCounter = 1;
 
 ArticleProvider = function(){};
@@ -26,7 +28,7 @@ ArticleProvider.prototype.save = function(articles, callback) {
 
   for( var i =0;i< articles.length;i++ ) {
     article = articles[i];
-    article._id = articleCounter++;
+    article._id = new ObjectID(articleCounter++);
     article.created_at = new Date();
 
     if( article.comments === undefined )

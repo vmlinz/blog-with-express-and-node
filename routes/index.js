@@ -7,7 +7,7 @@ module.exports = function (articleProvider) {
 		articleProvider.findAll(function(error, docs) {
 			res.render('index.jade', {
 				title: 'Blog',
-				articles:docs
+				articles: docs
 			});
 		});
 	});

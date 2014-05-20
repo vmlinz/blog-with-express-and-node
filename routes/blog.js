@@ -30,9 +30,7 @@ module.exports = function (articleProvider) {
     });
 
     router.get('/:id', function(req, res) {
-        console.log(req.params.id);
         articleProvider.findById(req.params.id, function(error, article) {
-            console.log(error);
             res.render('blog_show.jade', {
                 title: article.title,
                 article: article
