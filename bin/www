@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 var debug = require('debug')('my-application');
-var articleProvider = require('../model/articleprovider-mongodb.js').mongolabArticleProvider;
-var app = require('../app')(articleProvider);
+//var articleProvider = require('../model/articleprovider-mongodb.js').mongolabArticleProvider;
+var ArticleProvider = require('../model/articleprovider-mongoose.js').ArticleProvider;
+var app = require('../app')(new ArticleProvider());
 
 app.set('port', process.env.PORT || 3000);
 
