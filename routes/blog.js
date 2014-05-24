@@ -20,8 +20,8 @@ module.exports = function (articleProvider) {
     });
 
     router.post('/addComment', function(req, res) {
-        articleProvider.addCommentToArticle(req.param('_id'), {
-            person: req.param('person'),
+        articleProvider.addComment(req.param('_id'), {
+            author: req.param('author'),
             comment: req.param('comment'),
             created_at: new Date()
         } , function( error, docs) {
