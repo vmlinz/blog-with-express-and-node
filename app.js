@@ -23,6 +23,7 @@ module.exports = function (articleProvider) {
     app.use(cookieParser());
     app.use(require('stylus').middleware(path.join(__dirname, 'public')));
     app.use(express.static(path.join(__dirname, 'public')));
+    app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
     app.use('/', routes);
     app.use('/blog', blog);
