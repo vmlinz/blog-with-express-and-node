@@ -1,0 +1,27 @@
+{
+  "name": "myblog",
+  "version": "0.0.0",
+  "homepage": "https://github.com/vmlinz/blog-with-express-and-node",
+  "authors": [
+    "Zaicheng Qi <vmlinz@gmail.com>"
+  ],
+  "description": "A blog build with nodejs and express",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "main": "app.js",
+  "dependencies": {
+    "angular": "~1.2.16",
+    "bootstrap": "~3.1.1",
+    "angular-bootstrap": "~0.11.0",
+    "angular-route": "~1.2.16"
+  }
+}
